@@ -46,7 +46,7 @@ if st.button('Predict Win Probability'):
 
     input_df = pd.DataFrame({'BattingTeam':[batting_team], 'BowlingTeam':[bowling_team], 'City':[selected_city], 'runs_reqd':[runs_left], 'balls_left':[balls_left], 'wkts_left':[wickets_left], 'total_run_x':[target], 'crr':[crr], 'rrr':[rrr]})
     #st.table(input_df)
-    result = pipe.predict_proba(input_df)
+    result = pipe.Predict(input_df)
     loss = result[0][0]
     win = result[0][1]
     st.header(batting_team + " - " + str(round(win*100)) + "%")
